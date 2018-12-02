@@ -1,0 +1,95 @@
+/* Pure CSS tabs.  Based on:
+
+  <http://code.iamkate.com/html-and-css/tabbed-panels/> and
+  <http://htmldog.com/techniques/tabs/>.
+
+*/
+
+/* no display of radio button tab-controls */
+.tabs .tab input.tab-control {
+  display: none;
+}
+
+/* no display for non-selected tab-contents */
+.tabs .tab input.tab-control:not(:checked) ~ .tab-content {
+  display: none;
+}
+
+/* float all tab-titles to left and inline */
+.tabs .tab .tab-title {
+  float: left;
+  display: inline;
+  min-width: 5em;
+}
+
+/* float tab-content to right, adjust */
+.tabs .tab .tab-content {
+  float: right;
+  width: 100%;
+  margin: 2.2em 0 0 -100%
+}
+
+/* change mouse when over tab-title  */
+.tabs .tab .tab-title label { 
+  cursor: pointer;
+}
+
+/* set up sizing of tab-title */
+.tabs .tab .tab-title {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.5em 0;
+  overflow: hidden;
+  font-size: 1em;
+  font-weight: normal;
+}
+
+/* set up sizing of tab-content */
+.tabs .tab .tab-content {
+  box-sizing: border-box;
+  padding: 0.5em 0.75em;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  background: #fff;
+}
+
+/* set up tab-title box */
+.tabs .tab .tab-title label { 
+  display: block;
+  font-weight: 100;
+  z-index: 1;
+  padding: 0.25em 0.75em;
+  border: 1px solid #aaa;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 30px;
+  background: #ccc;
+}
+
+/* adjust first tab */
+.tabs input.tab-control:first-child ~ .tab .tab-title {
+  padding-left: 1em;
+}
+
+.tabs .tab .tab-content {
+  position: relative;
+  top: -1px;
+  z-index: 2;
+}
+
+.tabs .tab input.tab-control:checked ~ .tab-title label {
+  position: relative;
+  font-weight: 600;
+  z-index: 3;
+  background-color: white;
+  border: 1px solid #aaa;
+  border-bottom: none;
+}
+
+.tabs input.tab-control:not(:checked) ~ .tab-title label:hover {
+  background: #aaa;
+}
+
+.tabs {
+  float: left;
+  width: 100%;
+}

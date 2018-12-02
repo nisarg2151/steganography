@@ -1,0 +1,43 @@
+version: '3' 
+
+services: 
+
+######################
+# Setup server container 
+##################### 
+
+  server: 
+    build: ./server
+    expose:
+      - "1234"
+    environment:
+      API_HOST: "http://localhost:3000/" 
+      APP_SERVER_PORT: "1234" 
+    ports: 
+      - "1234:1234"
+    #volumes: 
+    #  - ./server/steg-ws:/nisarg/app/server/steg-ws 
+    links:
+      - mymongodb
+######################
+# Setup client container
+##################### 
+
+  client:
+    build: ./client
+    expose:
+      - "8000"
+    environment : 
+      REACT_APP_PORT: "8000" 
+    ports: 
+      - "8000:8000" 
+   # volumes: 
+   #   - ./client/steg-app:/nisarg/app/client/steg-app 
+    links: 
+      - server 
+
+############################
+# Database
+###########################
+  mymongodb:
+     image: mongo

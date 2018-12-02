@@ -1,0 +1,40 @@
+.user-container {
+  border: 1px solid black;
+  display: inline-block;
+  width: 700px;
+  margin: 0px 300px 10px 10px;
+}
+
+.user {
+  display: table;
+  margin: 10px auto;
+  padding: 10px;
+  width: 600px;
+  float: left;
+  clear: both;
+}
+
+.user .field {
+  display: table-row;
+}
+
+.user .field-name,
+.user .field-value {
+  display: table-cell;
+  margin-bottom: 10px;
+}
+
+.user .field-name {
+  width: 40%;
+  padding-right: 5%;
+  text-align: right;
+}
+
+.user .field-value {
+  width: 90%;
+}
+.user [type=submit] {
+  float: right;
+  width: auto;
+}
+
